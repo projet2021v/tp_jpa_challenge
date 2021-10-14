@@ -1,0 +1,27 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+	http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+
+	<persistence-unit name="pu_mybase" transaction-type="RESOURCE_LOCAL">
+	
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<!-- <class>main.java.boBanque.Adresse</class>
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes> -->
+		
+		<properties>
+			<!-- partie JPA générique -->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3308/tp_jpa_challenge_db" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<!-- partie spécifique Hibernate -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.format_sql" value="true" /> -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+		</properties>
+	</persistence-unit>
+</persistence>
